@@ -1,0 +1,31 @@
+version: "3.2"
+services:
+  webapp:
+    image: 92840/ecommerce:web
+    ports:
+      - 8000:8000
+    networks:
+      - myapp
+    environment:
+      - DB_HOST=db
+      - DB_USER=adam
+      - DB_PASSWORD=adam123
+      - DB_NAME=ecommerce
+    depends_on:
+      - db
+  db:
+    image: postgres
+    networks:
+      - myapp
+    environment:
+      - POSTGRES_USER=adam
+      - POSTGRES_PASSWORD=adam123
+      - POSTGRES_DB=ecommerce
+    volumes:
+      - mydata:/var/lib/postgresql/data
+  networks:
+    myapp:
+      driver: bridge
+  volumes:
+    mydata:
+      driver: local
