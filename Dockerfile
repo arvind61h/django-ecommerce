@@ -8,7 +8,7 @@ COPY requirements.txt ./
 
 RUN pip install virtualenv && virtualenv env
 
-RUN . env/bin/active
+RUN sh env/bin/active
 
 RUN pip install --no-cache-dir -r requirements.txt
 
