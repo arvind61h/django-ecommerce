@@ -10,7 +10,7 @@ RUN pip install virtualenv
 
 RUN python -m virtualenv  env
 
-RUN source  env/bin/active
+CMD ["/bin/bash", "-C", "source env/bin/active"]
 
 RUN pip install --no-cache-dir -r requirements.txt
 
