@@ -8,7 +8,7 @@ COPY requirements.txt ./
 
 RUN pip install virtualenv
 
-RUN virtualenv $USERNAME env
+RUN python -m virtualenv  env
 
 RUN sh env/bin/active
 
