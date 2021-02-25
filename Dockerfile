@@ -6,9 +6,9 @@ WORKDIR /app
 
 COPY requirements.txt ./
 
-RUN pip install virtualenv && python3 -m virtualenv $USERNAME 
+RUN pip install virtualenv
 
-RUN virtualenv env
+RUN virtualenv $USERNAME env
 
 RUN sh env/bin/active
 
