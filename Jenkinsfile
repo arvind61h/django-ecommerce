@@ -12,7 +12,6 @@ pipeline{
                 sh 'docker container prune -f'
                 sh 'docker volume prune -f'
                 sh 'docker system prune -f'
-                sh 'docker rmi 92840/shop:dev'
                 sh 'docker build -t 92840/ecommerce:web .'
             }
         }
