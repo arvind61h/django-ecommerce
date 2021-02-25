@@ -6,9 +6,9 @@ WORKDIR /app
 
 COPY requirements.txt ./
 
-RUN virtualenv env
+RUN pip install virtualenv && virtualenv env
 
-RUN sh env/bin/active
+RUN source env/bin/active
 
 RUN pip install --no-cache-dir -r requirements.txt
 
