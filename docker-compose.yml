@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.2"
 services:
   webapp:
     image: 92840/ecommerce:web
@@ -23,9 +23,9 @@ services:
       - POSTGRES_DB=ecommerce
     volumes:
       - ecom:/var/lib/postgresql/data
-  networks:
-    ecom:
-      driver: bridge
-  volumes:
-    ecom:
-      driver: local
+networks:
+  ecom:
+    driver: bridge
+volumes:
+  ecom:
+    driver: local
